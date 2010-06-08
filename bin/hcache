@@ -2,5 +2,5 @@
 
 require File.join(File.dirname(__FILE__), '../lib/hcache/app')
 
-Hcache::App.new(ARGV).run
+exit Hcache::App.new(ARGV).run
 

@@ -13,6 +13,9 @@ LIB = $(LIBDIR)/libtest.a
 OBJS = test-a.o test-b.o test-c.o
 PROG = test
 
+# The following does not compile.
+FAIL = test-d.o
+
 all: $(LIB) $(PROG)
 
 clean:
@@ -31,6 +34,8 @@ test-configuration: $(PROG)
 test-library: LIBDIRS = -Llib
 test-library: LIBS = -ltest
 test-library: $(LIB) $(PROG)
+
+test-compilation-failure: $(FAIL)
 
 $(LIB): $(LIBOBJS)
 	mkdir -p $(LIBDIR)

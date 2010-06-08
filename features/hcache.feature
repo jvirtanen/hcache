@@ -46,3 +46,7 @@ Feature: Header cache
     And "include/test.h" is excluded
     And "./test" prints "Hello World"
 
+  Scenario: Compilation failure
+    When I run "make test-compilation-failure"
+    Then it fails
+    
